@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const EmployeeSchema = new mongoose.Schema({
   regNo: String,
   name: String,
+  email: String,
   mobileNo: String,
   dob: String,
   batch: String,
@@ -13,7 +14,6 @@ const EmployeeSchema = new mongoose.Schema({
   zip: String,
   city: String,
   dist: String,
-  state: String,
 });
 
 const EmployeeModel = mongoose.model("employees", EmployeeSchema);

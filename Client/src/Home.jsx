@@ -25,18 +25,18 @@ const Home = () => {
 
   return (
     <div className="container">
-      <div className="form-container sign-up-container">
+      <div className="qn-container">
         <form onSubmit={handleSubmit1}>
           <h1 className="title">Feedback</h1>
           <input
             type="text"
-            placeholder="Teacher Comes to Class on time"
+            placeholder="Register Number"
             name="email"
             onChange={(e) => setQ1(e.target.value)}
           />
           <input
             type="text"
-            placeholder="Teaching is well planned"
+            placeholder="Student"
             name="email"
             onChange={(e) => setQ2(e.target.value)}
           />

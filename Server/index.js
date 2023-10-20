@@ -13,11 +13,11 @@ app.use(cors());
 mongoose.connect("mongodb://127.0.0.1:27017/employee");
 
 app.post("/login", (req, res) => {
-  const { email, password } = req.body;
+  const { email, regNo } = req.body;
 
   EmployeeModel.findOne({ email: email }).then((user) => {
     if (user) {
-      if (user.password === password) {
+      if (user.regNo === regNo) {
         res.json("Success");
       } else {
         res.json("Incorrect Password");

@@ -4,14 +4,14 @@ import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [regNo, setRegno] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/login", { email, password })
+      .post("http://localhost:3000/login", { email, regNo })
       .then((result) => {
         if (result.data === "Success") {
           navigate("/home");
@@ -32,20 +32,16 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            onChange={(e) => setPassword(e.target.value)}
+            type="text"
+            placeholder="Register Number"
+            name="regno"
+            onChange={(e) => setRegno(e.target.value)}
           />
           <button className="Btn3" type="submit">
             Sign in
           </button>
         </form>
       </div>
-
-      <Link to="/register">
-        <button className="Btn4">Register</button>
-      </Link>
     </div>
   );
 };

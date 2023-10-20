@@ -9,42 +9,58 @@ const Signup = () => {
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [dob, setDob] = useState("");
-  const [batch, setBatch] = useState("");
-  const [dept, setDept] = useState("");
+  const [batch, setBatch] = useState("1");
+  const [dept, setDept] = useState("1");
   const [parent, setParent] = useState("");
   const [parentNo, setParentNo] = useState("");
   const [address, setAddress] = useState("");
   const [zip, setZip] = useState("");
   const [city, setCity] = useState("");
   const [dist, setDist] = useState("");
-  const [state, setState] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:3000/register", {
-        regNo,
-        name,
-        mobile,
-        email,
-        dob,
-        batch,
-        dept,
-        parent,
-        parentNo,
-        address,
-        zip,
-        city,
-        dist,
-        state,
-      })
-      .then((result) => {
-        console.log(result);
-        navigate("/login");
-      })
-      .catch((err) => console.log(err));
+    if (
+      !regNo ||
+      !name ||
+      !mobile ||
+      !email ||
+      !dob ||
+      !parent ||
+      !parentNo ||
+      !parentNo ||
+      !address ||
+      !zip ||
+      !city ||
+      !dist
+    ) {
+      console.log("Error");
+    } else {
+      axios
+        .post("http://localhost:3000/register", {
+          regNo,
+          name,
+          mobile,
+          email,
+          dob,
+          batch,
+          dept,
+          parent,
+          parentNo,
+          address,
+          zip,
+          city,
+          dist,
+          state,
+        })
+        .then((result) => {
+          console.log(result);
+          navigate("/login");
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   return (
@@ -137,11 +153,9 @@ const Signup = () => {
               />
             </div>
           </div>
+          <button type="submit">Sign Up</button>
         </form>
       </div>
-      <Link to="/login">
-        <button className="Btn1">Sign Up</button>
-      </Link>
     </div>
   );
 };

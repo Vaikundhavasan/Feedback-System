@@ -24,7 +24,22 @@ const Signup = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/register", { name, email, password })
+      .post("http://localhost:3000/register", {
+        regNo,
+        name,
+        mobile,
+        email,
+        dob,
+        batch,
+        dept,
+        parent,
+        parentNo,
+        address,
+        zip,
+        city,
+        dist,
+        state,
+      })
       .then((result) => {
         console.log(result);
         navigate("/login");
@@ -43,31 +58,31 @@ const Signup = () => {
                 type="text"
                 placeholder="Register Number"
                 name="regNo"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={(e) => setRegNo(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Name"
                 name="name"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Mobile Number"
-                name="name"
-                onChange={(e) => setEmail(e.target.value)}
+                name="mobile"
+                onChange={(e) => setMobile(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Email"
-                name="name"
+                name="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 type="calendar"
                 placeholder="DOB"
-                name="name"
-                onChange={(e) => setEmail(e.target.value)}
+                name="dob"
+                onChange={(e) => setDob(e.target.value)}
               />
               <select>
                 <option>Batch</option>
@@ -86,39 +101,39 @@ const Signup = () => {
               <input
                 type="text"
                 placeholder="Father/Guardian"
-                name="name"
-                onChange={(e) => setEmail(e.target.value)}
+                name="parent"
+                onChange={(e) => setParent(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Father/Guardian Number"
-                name="name"
-                onChange={(e) => setEmail(e.target.value)}
+                name="parentNo"
+                onChange={(e) => setParentNo(e.target.value)}
               />
               <textarea
                 className="address"
                 type="text"
                 placeholder="Address"
-                name="name"
-                onChange={(e) => setEmail(e.target.value)}
+                name="address"
+                onChange={(e) => setAddress(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Zip"
-                name="name"
-                onChange={(e) => setEmail(e.target.value)}
+                name="zip"
+                onChange={(e) => setZip(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="City"
-                name="name"
-                onChange={(e) => setEmail(e.target.value)}
+                name="city"
+                onChange={(e) => setCity(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="District"
-                name="name"
-                onChange={(e) => setEmail(e.target.value)}
+                name="dsit"
+                onChange={(e) => setDist(e.target.value)}
               />
             </div>
           </div>

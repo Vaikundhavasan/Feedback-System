@@ -55,7 +55,6 @@ const Signup = () => {
           zip,
           city,
           dist,
-          state,
         })
         .then((result) => {
           console.log(result);

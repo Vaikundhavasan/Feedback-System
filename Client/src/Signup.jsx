@@ -34,9 +34,11 @@ const Signup = () => {
       !address ||
       !zip ||
       !city ||
-      !dist
+      !dist ||
+      !batch ||
+      !dept
     ) {
-      console.log("Error");
+      consosle.log("Error");
     } else {
       axios
         .post("http://localhost:3000/register", {
@@ -100,13 +102,13 @@ const Signup = () => {
                 name="dob"
                 onChange={(e) => setDob(e.target.value)}
               />
-              <select>
+              <select onChange={(e) => setBatch(e.target.value)}>
                 <option>Batch</option>
                 <option>2019-2023</option>
                 <option>2020-2024</option>
                 <option>2021-2025</option>
               </select>
-              <select>
+              <select onChange={(e) => setDept(e.target.value)}>
                 <option>Department</option>
                 <option>MCA</option>
                 <option>MBA</option>
